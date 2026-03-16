@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Welcome Page Styling */
+#welcomeScreen {
+    height: 100vh;
+    background: url('back-ground.jpg') no-repeat center center/cover; /* Background Image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f8f9fa; /* Softer white for better readability */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Lower brightness effect */
+#welcomeScreen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Darker overlay */
+    z-index: 0;
+}
+
+/* Unified Background for All Welcome Screen Text */
+#welcomeScreen h1,
+#welcomeScreen p,
+#welcomeScreen button,
+#welcomeScreen .quote {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); /* Slight shadow for depth */
+}
+
+/* Heading Styling */
+#welcomeScreen h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Quote Styling */
+#welcomeScreen .quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 15px;
+    max-width: 80%;
+    text-align: center;
+    color: #ffc107; /* Gold text for contrast */
+    border-left: 4px solid #ffc107; /* Golden left border */
+}
+
+/* Paragraph Styling */
+#welcomeScreen p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Button Styling */
+#welcomeScreen button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Clock Container */
+#clockContainer {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7); /* Background like other elements */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+    margin-top: 15px;
+}
+
+/* Clock Style */
+#clock {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffc107; /* Gold color */
+}
+
+/* Motivational Time Message */
+.time-message {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #f8f9fa;
+    margin-top: 5px;
+}
+
+#welcomeScreen button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.08);
+}
+
+/* To-Do List Container */
+#appContainer {
+    display: none;
+}
+
+/* To-Do List Card */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Input */
+.input-group input, .input-group select {
+    border-radius: 8px;
+}
+
+/* Task List */
+.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+/* Task Hover Effect */
+.list-group-item:hover {
+    transform: scale(1.02);
+}
+
+/* Drag-and-Drop Effect */
+.dragging {
+    opacity: 0.5;
+    border: 2px dashed #ffc107;
+}
+
+/* Task Buttons */
+.task-actions button {
+    margin-left: 5px;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #welcomeScreen h1 {
+        font-size: 2rem;
+    }
+    #welcomeScreen p {
+        font-size: 1rem;
+    }
+    #welcomeScreen button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    #welcomeScreen .quote {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Styling */
+footer {
+    background: #343a40; /* Dark background */
+    color: #f8f9fa; /* Light text */
+    padding: 15px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Developer Credit */
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer strong {
+    color: #ffc107; /* Gold highlight */
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #007bff;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #1e90ff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+#taskChartContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.dark-mode .list-group-item {
+    background-color: #333;
+    color: #fff;
+}
